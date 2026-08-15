@@ -32,7 +32,7 @@ async def on_ready():
     await tree.sync()
     print(f'BOT ONLINE')
 
-@tree.command(name="war", description="")
+@tree.command(name="war1", description="")
 @app_commands.describe(user="Người muốn chửi")
 async def war(interaction: discord.Interaction, user: discord.Member):
     if interaction.user.id in active_wars:
@@ -57,7 +57,7 @@ async def war(interaction: discord.Interaction, user: discord.Member):
     finally:
         active_wars.pop(interaction.user.id, None)
 
-@tree.command(name="stop", description="")
+@tree.command(name="stop1", description="")
 async def stop(interaction: discord.Interaction):
     if interaction.user.id in active_wars:
         active_wars[interaction.user.id] = False
